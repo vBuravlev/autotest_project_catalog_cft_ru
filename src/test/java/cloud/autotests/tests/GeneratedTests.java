@@ -20,8 +20,7 @@ import java.util.concurrent.atomic.AtomicInteger;
 public class GeneratedTests extends TestBase {
 
     @ValueSource(strings = {"SWIFT-сообщения свободного формата МТ799, МТ999"})
-    @ParameterizedTest
-    @DisplayName("Search by application name on the website")
+    @ParameterizedTest (name = "Search by application name on the website")
     void searchTestNameApplication(String testData) {
         step("Open catalog.cft.ru", () ->
             open("https://catalog.cft.ru/")
@@ -37,8 +36,7 @@ public class GeneratedTests extends TestBase {
     }
 
     @ValueSource(strings = {"1B280190"})
-    @ParameterizedTest
-    @DisplayName("Search by application code on the website")
+    @ParameterizedTest(name = "Search by application code on the website")
     void searchTestCodeApplication(String testData) {
         step("Open catalog.cft.ru", () ->
             open("https://catalog.cft.ru/")
@@ -55,8 +53,7 @@ public class GeneratedTests extends TestBase {
 
     @CsvSource(value = {
             "rgba(255, 255, 255, 1)| rgba(235, 80, 94, 1)"}, delimiter = '|')
-    @ParameterizedTest
-    @DisplayName("Checking the operation of \"chips\" on the main page")
+    @ParameterizedTest (name ="Checking the operation of \"chips\" on the main page")
     void chipsMainTest(String testData, String expectedText) {
         AtomicInteger collectionNotChipsUse = new AtomicInteger();
         AtomicInteger collectionChipsUse = new AtomicInteger();
@@ -106,8 +103,7 @@ public class GeneratedTests extends TestBase {
             "экспресс-карт| Авторизация экспресс-карт",
             "удаленная идентификация| F.ID. Удаленная идентификация клиента в ЕБС"
     }, delimiter = '|')
-    @ParameterizedTest
-    @DisplayName("Checking the availability of the application in the business direction and the catalog on the site")
+    @ParameterizedTest (name = "Checking the availability of the application in the business direction and the catalog on the site")
     void applicationSearchTest(String testData, String expectedText) {
         step("Open catalog.cft.ru", () ->
             open("https://catalog.cft.ru/")
