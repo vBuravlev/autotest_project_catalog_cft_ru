@@ -19,6 +19,6 @@ public interface ProjectConfig extends Config {
     String browserMobileView();
     String remoteDriverUrl();
     String videoStorage();
-    @DefaultValue("10000")
+    @DefaultValue("4000")
     int timeout();
 }
