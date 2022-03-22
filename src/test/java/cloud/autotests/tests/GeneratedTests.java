@@ -88,7 +88,6 @@ public class GeneratedTests extends TestBase {
         step("Checking for lack of filtration if chips are not used", () -> {
             collectionNotChipsUse2.set($$("div.MuiGrid-root.MuiGrid-container.MuiGrid-spacing-xs-3").size());
             assertThat(collectionNotChipsUse2.get() > collectionChipsUse.get());
-            System.out.println(assertThat(collectionNotChipsUse2.get() > collectionChipsUse.get()));
         });
     }
 
