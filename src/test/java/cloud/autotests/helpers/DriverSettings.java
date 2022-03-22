@@ -2,7 +2,7 @@ package cloud.autotests.helpers;
 
 import cloud.autotests.config.Project;
 import com.codeborne.selenide.Configuration;
-import com.codeborne.selenide.Selenide;
+
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.opera.OperaOptions;
@@ -18,7 +18,6 @@ public class DriverSettings {
         Configuration.browserVersion = Project.config.browserVersion();
         Configuration.browserSize = Project.config.browserSize();
         Configuration.timeout=Project.config.timeout();
-//        Configuration.baseUrl = App.config.webUrl();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
         ChromeOptions chromeOptions = new ChromeOptions();
