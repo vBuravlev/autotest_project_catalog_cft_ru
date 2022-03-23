@@ -23,7 +23,9 @@ public class AllureAttachments {
     }
 
     public static void addBrowserConsoleLogs() {
-        addMessage("Browser console logs", DriverUtils.getConsoleLogs());
+        if (!(Project.config.browser()).equals("firefox")) {
+            addMessage("Browser console logs", DriverUtils.getConsoleLogs());
+        }
     }
 
     @Attachment(value = "{attachName}", type = "image/png")

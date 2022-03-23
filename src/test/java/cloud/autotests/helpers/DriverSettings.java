@@ -18,7 +18,7 @@ public class DriverSettings {
         Configuration.browser = Project.config.browser();
         Configuration.browserVersion = Project.config.browserVersion();
         Configuration.browserSize = Project.config.browserSize();
-        Configuration.timeout=Project.config.timeout();
+        Configuration.timeout = Project.config.timeout();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
 
@@ -41,7 +41,7 @@ public class DriverSettings {
             firefoxOptions.addArguments("--enable-logging");
             firefoxOptions.addArguments("--ignore-certificate-errors");
             firefoxOptions.addArguments("--disable-gpu");
-            capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS , firefoxOptions);
+            capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
         } else if ((Project.config.browser()).equals("opera")) {
             OperaOptions operaOptions = new OperaOptions();
             operaOptions.addArguments("--disable-gpu");
