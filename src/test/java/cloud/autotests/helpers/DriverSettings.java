@@ -44,7 +44,7 @@ public class DriverSettings {
             capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
         } else if ((Project.config.browser()).equals("opera")) {
             OperaOptions operaOptions = new OperaOptions();
-            operaOptions.addArguments("--disable-gpu");
+//            operaOptions.addArguments("--disable-gpu");
             capabilities.setCapability(OperaOptions.CAPABILITY, operaOptions);
         }
 
