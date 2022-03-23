@@ -24,31 +24,31 @@ public class DriverSettings {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         OperaOptions operaOptions = new OperaOptions();
 
-        chromeOptions.addArguments("--no-sandbox");
-        chromeOptions.addArguments("--disable-infobars");
-        chromeOptions.addArguments("--disable-popup-blocking");
-        chromeOptions.addArguments("--disable-notifications");
-        chromeOptions.addArguments("--lang=en-en");
+//        chromeOptions.addArguments("--no-sandbox");
+//        chromeOptions.addArguments("--disable-infobars");
+//        chromeOptions.addArguments("--disable-popup-blocking");
+//        chromeOptions.addArguments("--disable-notifications");
+//        chromeOptions.addArguments("--lang=en-en");
 
-//        if ((Configuration.browser).equals("chrome")) {
-//            chromeOptions.addArguments("--no-sandbox");
-//            chromeOptions.addArguments("--disable-infobars");
-//            chromeOptions.addArguments("--disable-popup-blocking");
-//            chromeOptions.addArguments("--disable-notifications");
-//            chromeOptions.addArguments("--lang=en-en");
-//        } else if ((Configuration.browser).equals("firefox")) {
-//            firefoxOptions.addArguments("--no-sandbox");
-//            firefoxOptions.addArguments("--disable-infobars");
-//            firefoxOptions.addArguments("--disable-popup-blocking");
-//            firefoxOptions.addArguments("--disable-notifications");
-//            firefoxOptions.addArguments("--lang=en-en");
-//        } else if ((Configuration.browser).equals("opera")) {
-//            operaOptions.addArguments("--no-sandbox");
-//            operaOptions.addArguments("--disable-infobars");
-//            operaOptions.addArguments("--disable-popup-blocking");
-//            operaOptions.addArguments("--disable-notifications");
-//            operaOptions.addArguments("--lang=en-en");
-//        }
+        if ((Configuration.browser).equals("chrome")) {
+            chromeOptions.addArguments("--no-sandbox");
+            chromeOptions.addArguments("--disable-infobars");
+            chromeOptions.addArguments("--disable-popup-blocking");
+            chromeOptions.addArguments("--disable-notifications");
+            chromeOptions.addArguments("--lang=en-en");
+        } else if ((Configuration.browser).equals("firefox")) {
+            firefoxOptions.addArguments("--no-sandbox");
+            firefoxOptions.addArguments("--disable-infobars");
+            firefoxOptions.addArguments("--disable-popup-blocking");
+            firefoxOptions.addArguments("--disable-notifications");
+            firefoxOptions.addArguments("--lang=en-en");
+        } else if ((Configuration.browser).equals("opera")) {
+            operaOptions.addArguments("--no-sandbox");
+            operaOptions.addArguments("--disable-infobars");
+            operaOptions.addArguments("--disable-popup-blocking");
+            operaOptions.addArguments("--disable-notifications");
+            operaOptions.addArguments("--lang=en-en");
+        }
 
             if (Project.isWebMobile()) { // for chrome only
             Map<String, Object> mobileDevice = new HashMap<>();
