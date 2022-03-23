@@ -24,12 +24,6 @@ public class DriverSettings {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         OperaOptions operaOptions = new OperaOptions();
 
-//        chromeOptions.addArguments("--no-sandbox");
-//        chromeOptions.addArguments("--disable-infobars");
-//        chromeOptions.addArguments("--disable-popup-blocking");
-//        chromeOptions.addArguments("--disable-notifications");
-//        chromeOptions.addArguments("--lang=en-en");
-
         if ((Configuration.browser).equals("chrome")) {
             chromeOptions.addArguments("--no-sandbox");
             chromeOptions.addArguments("--disable-infobars");

@@ -21,4 +21,6 @@ public interface ProjectConfig extends Config {
     String videoStorage();
     @DefaultValue("4000")
     int timeout();
+    @DefaultValue("1000")
+    int timeoutVideoAttach();
 }
