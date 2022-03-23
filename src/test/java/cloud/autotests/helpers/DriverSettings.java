@@ -24,24 +24,19 @@ public class DriverSettings {
         FirefoxOptions firefoxOptions = new FirefoxOptions();
         OperaOptions operaOptions = new OperaOptions();
 
-        if ((Configuration.browser).equals("chrome")) {
+        if ((Project.config.browser()).equals("chrome")) {
             chromeOptions.addArguments("--no-sandbox");
             chromeOptions.addArguments("--disable-infobars");
             chromeOptions.addArguments("--disable-popup-blocking");
             chromeOptions.addArguments("--disable-notifications");
             chromeOptions.addArguments("--lang=en-en");
-        } else if ((Configuration.browser).equals("firefox")) {
-            firefoxOptions.addArguments("--no-sandbox");
-            firefoxOptions.addArguments("--disable-infobars");
-            firefoxOptions.addArguments("--disable-popup-blocking");
-            firefoxOptions.addArguments("--disable-notifications");
-            firefoxOptions.addArguments("--lang=en-en");
-        } else if ((Configuration.browser).equals("opera")) {
-            operaOptions.addArguments("--no-sandbox");
-            operaOptions.addArguments("--disable-infobars");
-            operaOptions.addArguments("--disable-popup-blocking");
-            operaOptions.addArguments("--disable-notifications");
-            operaOptions.addArguments("--lang=en-en");
+        } else if ((Project.config.browser()).equals("firefox")) {
+            firefoxOptions.addArguments("--fast-start");
+            firefoxOptions.addArguments("--enable-logging");
+            firefoxOptions.addArguments("--ignore-certificate-errors");
+            firefoxOptions.addArguments("--disable-gpu");
+        } else if ((Project.config.browser()).equals("opera")) {
+            operaOptions.addArguments("--disable-gpu");
         }
 
             if (Project.isWebMobile()) { // for chrome only
