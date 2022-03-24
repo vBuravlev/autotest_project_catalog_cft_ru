@@ -39,9 +39,6 @@ public class DriverSettings {
             firefoxOptions.addArguments("--disable-gpu");
             capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
         } else if ((Project.config.browser()).equals("opera")) {
-            operaOptions.addArguments("--fast-start");
-            operaOptions.addArguments("--enable-logging");
-            operaOptions.addArguments("--ignore-certificate-errors");
             operaOptions.addArguments("--disable-gpu");
             capabilities.setCapability(OperaOptions.CAPABILITY, operaOptions);
         }
