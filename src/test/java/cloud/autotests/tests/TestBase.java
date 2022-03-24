@@ -16,8 +16,6 @@ import org.junit.jupiter.api.extension.ExtendWith;
 @ExtendWith({AllureJunit5.class})
 public class TestBase {
 
-
-
     @BeforeAll
     static void setUp() {
         SelenideLogger.addListener("AllureSelenide", new AllureSelenide());
@@ -30,17 +28,12 @@ public class TestBase {
 
         AllureAttachments.addScreenshotAs("Last screenshot");
         AllureAttachments.addPageSource();
-//        AllureAttachments.attachNetwork(); // todo
         AllureAttachments.addBrowserConsoleLogs();
 
         Selenide.closeWebDriver();
 
         if (Project.isVideoOn()) {
-            try {
                 AllureAttachments.addVideo(sessionId);
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
         }
     }
 }

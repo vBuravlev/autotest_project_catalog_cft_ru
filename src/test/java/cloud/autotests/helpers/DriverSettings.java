@@ -21,31 +21,44 @@ public class DriverSettings {
         Configuration.timeout = Project.config.timeout();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
+        OperaOptions operaOptions = new OperaOptions();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        FirefoxOptions firefoxOptions = new FirefoxOptions();
 
         if ((Project.config.browser()).equals("chrome")) {
-            ChromeOptions chromeOptions = new ChromeOptions();
             chromeOptions.addArguments("--no-sandbox");
             chromeOptions.addArguments("--disable-infobars");
             chromeOptions.addArguments("--disable-popup-blocking");
             chromeOptions.addArguments("--disable-notifications");
             chromeOptions.addArguments("--lang=en-en");
             capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-            if (Project.isWebMobile()) { // for chrome only
-                Map<String, Object> mobileDevice = new HashMap<>();
-                mobileDevice.put("deviceName", Project.config.browserMobileView());
-                chromeOptions.setExperimentalOption("mobileEmulation", mobileDevice);
-            }
         } else if ((Project.config.browser()).equals("firefox")) {
-            FirefoxOptions firefoxOptions = new FirefoxOptions();
             firefoxOptions.addArguments("--fast-start");
             firefoxOptions.addArguments("--enable-logging");
             firefoxOptions.addArguments("--ignore-certificate-errors");
             firefoxOptions.addArguments("--disable-gpu");
+            firefoxOptions.addArguments("--disable-infobars");
+            firefoxOptions.addArguments("--disable-popup-blocking");
+            firefoxOptions.addArguments("--disable-notifications");
+            firefoxOptions.addArguments("--lang=en-en");
             capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
         } else if ((Project.config.browser()).equals("opera")) {
-            OperaOptions operaOptions = new OperaOptions();
-//            operaOptions.addArguments("--disable-gpu");
+            operaOptions.addArguments("--disable-gpu");
+            operaOptions.addArguments("--no-sandbox");
+            operaOptions.addArguments("--disable-infobars");
+            operaOptions.addArguments("--disable-popup-blocking");
+            operaOptions.addArguments("--disable-notifications");
+            operaOptions.addArguments("--lang=en-en");
+            operaOptions.addArguments("--fast-start");
+            operaOptions.addArguments("--enable-logging");
+            operaOptions.addArguments("--ignore-certificate-errors");
             capabilities.setCapability(OperaOptions.CAPABILITY, operaOptions);
+        }
+
+        if (Project.isWebMobile()) { // for chrome only
+            Map<String, Object> mobileDevice = new HashMap<>();
+            mobileDevice.put("deviceName", Project.config.browserMobileView());
+            chromeOptions.setExperimentalOption("mobileEmulation", mobileDevice);
         }
 
         if (Project.isRemoteWebDriver()) {
