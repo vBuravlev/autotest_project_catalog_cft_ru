@@ -37,21 +37,21 @@ public class DriverSettings {
             firefoxOptions.addArguments("--enable-logging");
             firefoxOptions.addArguments("--ignore-certificate-errors");
             firefoxOptions.addArguments("--disable-gpu");
-            firefoxOptions.addArguments("--disable-infobars");
-            firefoxOptions.addArguments("--disable-popup-blocking");
-            firefoxOptions.addArguments("--disable-notifications");
-            firefoxOptions.addArguments("--lang=en-en");
+//            firefoxOptions.addArguments("--disable-infobars");
+//            firefoxOptions.addArguments("--disable-popup-blocking");
+//            firefoxOptions.addArguments("--disable-notifications");
+//            firefoxOptions.addArguments("--lang=en-en");
             capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
         } else if ((Project.config.browser()).equals("opera")) {
             operaOptions.addArguments("--disable-gpu");
-            operaOptions.addArguments("--no-sandbox");
-            operaOptions.addArguments("--disable-infobars");
-            operaOptions.addArguments("--disable-popup-blocking");
-            operaOptions.addArguments("--disable-notifications");
-            operaOptions.addArguments("--lang=en-en");
-            operaOptions.addArguments("--fast-start");
-            operaOptions.addArguments("--enable-logging");
-            operaOptions.addArguments("--ignore-certificate-errors");
+//            operaOptions.addArguments("--no-sandbox");
+//            operaOptions.addArguments("--disable-infobars");
+//            operaOptions.addArguments("--disable-popup-blocking");
+//            operaOptions.addArguments("--disable-notifications");
+//            operaOptions.addArguments("--lang=en-en");
+//            operaOptions.addArguments("--fast-start");
+//            operaOptions.addArguments("--enable-logging");
+//            operaOptions.addArguments("--ignore-certificate-errors");
             capabilities.setCapability(OperaOptions.CAPABILITY, operaOptions);
         }
 
