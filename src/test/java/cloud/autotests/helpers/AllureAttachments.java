@@ -38,18 +38,18 @@ public class AllureAttachments {
         return DriverUtils.getPageSourceAsBytes();
     }
 
-    public static void addVideo(String sessionId) throws InterruptedException {
+    public static void addVideo(String sessionId) {
         URL videoUrl = DriverUtils.getVideoUrl(sessionId);
         if (videoUrl != null) {
             InputStream videoInputStream = null;
-            Thread.sleep(timeoutVideoAttach);
+            sleep(timeoutVideoAttach);
 
             for (int i = 0; i < 10; i++) {
                 try {
                     videoInputStream = videoUrl.openStream();
                     break;
                 } catch (FileNotFoundException e) {
-                    Thread.sleep(timeoutVideoAttach);
+                    sleep(timeoutVideoAttach);
                 } catch (IOException e) {
                     LOGGER.warn("[ALLURE VIDEO ATTACHMENT ERROR] Cant attach allure video, {}", videoUrl);
                     e.printStackTrace();
