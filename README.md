@@ -122,7 +122,7 @@ TestOps*</strong></code>, кликнув по которым, откроется
 
 ## <img width="4%" title="Allure Report" src="images/logo/Allure.svg"> Отчет о результатах тестирования в [Allure Report](https://jenkins.autotests.cloud/job/catalog.cft.ru_test_jenkins/allure/)
 
-## <img width="4%" title="Allure TestOps" src="images/logo/Allure_TO.svg"> Отчет о результатах тестирования в [Allure TestOps](https://allure.autotests.cloud/project/1059/dashboards)
+## <img width="4%" title="Allure TestOps" src="images/logo/Allure_TO.svg"> Отчет о результатах тестирования в Allure TestOps (https://allure.autotests.cloud/project/1059/dashboards)
 
 ### :pushpin: Общая информация по отчетам о тестировании
 
@@ -154,7 +154,7 @@ TestOps*</strong></code>, кликнув по которым, откроется
   <img src="images/screens/Alure_TO2.png" alt="test cases" width="900">
 </p>
 
-## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в специальный чат [Telegram] с использованием бота
+## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
 
 > После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о пройденных тестах.
 
@@ -162,7 +162,7 @@ TestOps*</strong></code>, кликнув по которым, откроется
 <img title="Telegram Notifications" src="images/screens/Telegram.png">
 </p>
 
-## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в [Selenoid] (видео отчет о прохождении тестов)
+## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Selenoid
 
 > К каждому тесту в отчете прилагается видео.
 <p align="center">
