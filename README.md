@@ -151,7 +151,7 @@ TestOps*</strong></code>, кликнув по которым, откроется
 ### :pushpin: Тест-кейсы
 
 <p align="center">
-  <img src="images/screens/Alure_TO2.png" alt="test cases" width="900">
+  <img src="images/screens/Allure_TO2.png" alt="test cases" width="900">
 </p>
 
 ## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в Telegram с использованием бота
