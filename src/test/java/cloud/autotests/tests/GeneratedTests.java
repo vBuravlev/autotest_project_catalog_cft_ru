@@ -2,11 +2,9 @@ package cloud.autotests.tests;
 
 import cloud.autotests.config.Project;
 import cloud.autotests.helpers.DriverUtils;
-import com.codeborne.selenide.Selenide;
 import jdk.jfr.Description;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.openqa.selenium.devtools.v97.network.model.Cookie;
 
 import static com.codeborne.selenide.Condition.*;
 import static com.codeborne.selenide.Selenide.*;
@@ -161,5 +159,8 @@ public class GeneratedTests extends TestBase {
             assertThat(consoleLogs).doesNotContain(errorText);
         });
     }
+
+
+
 
 }

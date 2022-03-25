@@ -10,17 +10,17 @@ import org.aeonbits.owner.Config;
 })
 public interface ProjectConfig extends Config {
 
-//    @DefaultValue("chrome")
+    @DefaultValue("chrome")
     String browser();
-//    @DefaultValue("91.0")
+    @DefaultValue("91.0")
     String browserVersion();
     @DefaultValue("1920x1080")
     String browserSize();
     String browserMobileView();
     String remoteDriverUrl();
     String videoStorage();
-//    @DefaultValue("4000")
+    @DefaultValue("4000")
     int timeout();
-//    @DefaultValue("1000")
+    @DefaultValue("1000")
     int timeoutVideoAttach();
 }
