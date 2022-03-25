@@ -11,6 +11,8 @@
 >  :heavy_check_mark: [Запуск тестов в Jenkins](#-запуск-тестов-в-jenkins)
 >
 >  :heavy_check_mark: [Отчет о результатах тестирования в Allure Report](#-отчет-о-результатах-тестирования-в-allure-report)
+> 
+>  :heavy_check_mark: [Отчет о результатах тестирования в Allure TestOps](#-отчет-о-результатах-тестирования-в-allure-testops)
 >
 >  :heavy_check_mark: [Интеграция с Allure TestOps](#-интеграция-с-allure-testops)
 >
@@ -152,7 +154,7 @@ TestOps*</strong></code>, кликнув по которым, откроется
   <img src="images/screens/Alure_TO2.png" alt="test cases" width="900">
 </p>
 
-## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в специальный чат Telegram с использованием бота
+## <img width="4%" title="Telegram" src="images/logo/Telegram.svg"> Уведомления в специальный чат [Telegram] с использованием бота
 
 > После завершения сборки специальный бот, созданный в <code>Telegram</code>, автоматически обрабатывает и отправляет сообщение с отчетом о пройденных тестах.
 
@@ -160,7 +162,7 @@ TestOps*</strong></code>, кликнув по которым, откроется
 <img title="Telegram Notifications" src="images/screens/Telegram.png">
 </p>
 
-## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в Selenoid (видео отчет о прохождении тестов)
+## <img width="4%" title="Selenoid" src="images/logo/Selenoid.svg"> Пример запуска теста в [Selenoid] (видео отчет о прохождении тестов)
 
 > К каждому тесту в отчете прилагается видео.
 <p align="center">
