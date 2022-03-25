@@ -18,7 +18,6 @@ import static org.openqa.selenium.logging.LogType.BROWSER;
 public class DriverUtils {
     public static final Logger LOGGER = LoggerFactory.getLogger(DriverUtils.class);
 
-
     public static String getSessionId() {
         return ((RemoteWebDriver) getWebDriver()).getSessionId().toString();
     }
@@ -33,7 +32,6 @@ public class DriverUtils {
 
     public static URL getVideoUrl(String sessionId) {
         String videoUrl = Project.config.videoStorage() + sessionId + ".mp4";
-
         try {
             return new URL(videoUrl);
         } catch (MalformedURLException e) {

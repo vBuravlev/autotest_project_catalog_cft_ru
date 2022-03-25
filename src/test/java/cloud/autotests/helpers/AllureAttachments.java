@@ -1,5 +1,6 @@
 package cloud.autotests.helpers;
 
+import cloud.autotests.config.Project;
 import io.qameta.allure.Allure;
 import io.qameta.allure.Attachment;
 import org.slf4j.Logger;
@@ -14,6 +15,7 @@ import static com.codeborne.selenide.Selenide.sleep;
 
 public class AllureAttachments {
     public static final Logger LOGGER = LoggerFactory.getLogger(AllureAttachments.class);
+    public static int timeoutVideoAttach = Project.config.timeoutVideoAttach();
 
     @Attachment(value = "{attachName}", type = "text/plain")
     private static String addMessage(String attachName, String text) {
@@ -21,7 +23,9 @@ public class AllureAttachments {
     }
 
     public static void addBrowserConsoleLogs() {
-        addMessage("Browser console logs", DriverUtils.getConsoleLogs());
+        if (!(Project.config.browser()).equals("firefox")) {
+            addMessage("Browser console logs", DriverUtils.getConsoleLogs());
+        }
     }
 
     @Attachment(value = "{attachName}", type = "image/png")
@@ -38,14 +42,14 @@ public class AllureAttachments {
         URL videoUrl = DriverUtils.getVideoUrl(sessionId);
         if (videoUrl != null) {
             InputStream videoInputStream = null;
-            sleep(1000);
+            sleep(timeoutVideoAttach);
 
             for (int i = 0; i < 10; i++) {
                 try {
                     videoInputStream = videoUrl.openStream();
                     break;
                 } catch (FileNotFoundException e) {
-                    sleep(1000);
+                    sleep(timeoutVideoAttach);
                 } catch (IOException e) {
                     LOGGER.warn("[ALLURE VIDEO ATTACHMENT ERROR] Cant attach allure video, {}", videoUrl);
                     e.printStackTrace();
