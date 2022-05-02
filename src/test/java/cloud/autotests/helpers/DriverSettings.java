@@ -21,29 +21,33 @@ public class DriverSettings {
         Configuration.timeout = Project.config.timeout();
 
         DesiredCapabilities capabilities = new DesiredCapabilities();
-        OperaOptions operaOptions = new OperaOptions();
         ChromeOptions chromeOptions = new ChromeOptions();
         FirefoxOptions firefoxOptions = new FirefoxOptions();
+        OperaOptions operaOptions = new OperaOptions();
 
-        if ((Project.config.browser()).equals("chrome")) {
-            chromeOptions.addArguments("--no-sandbox");
-            chromeOptions.addArguments("--disable-infobars");
-            chromeOptions.addArguments("--disable-popup-blocking");
-            chromeOptions.addArguments("--disable-notifications");
-            chromeOptions.addArguments("--lang=en-en");
-            capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
-        } else if ((Project.config.browser()).equals("firefox")) {
-            firefoxOptions.addArguments("--fast-start");
-            firefoxOptions.addArguments("--enable-logging");
-            firefoxOptions.addArguments("--ignore-certificate-errors");
-            firefoxOptions.addArguments("--disable-gpu");
-            capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
-        } else if ((Project.config.browser()).equals("opera")) {
-            operaOptions.addArguments("--disable-gpu");
-            capabilities.setCapability(OperaOptions.CAPABILITY, operaOptions);
+        switch (Configuration.browser) {
+            case "chrome":
+                chromeOptions.addArguments("--no-sandbox");
+                chromeOptions.addArguments("--disable-infobars");
+                chromeOptions.addArguments("--disable-popup-blocking");
+                chromeOptions.addArguments("--disable-notifications");
+                chromeOptions.addArguments("--lang=en-en");
+                capabilities.setCapability(ChromeOptions.CAPABILITY, chromeOptions);
+                break;
+            case "firefox":
+                firefoxOptions.addArguments("--fast-start");
+                firefoxOptions.addArguments("--enable-logging");
+                firefoxOptions.addArguments("--ignore-certificate-errors");
+                firefoxOptions.addArguments("--disable-gpu");
+                capabilities.setCapability(FirefoxOptions.FIREFOX_OPTIONS, firefoxOptions);
+                break;
+            case "opera":
+                operaOptions.addArguments("--disable-gpu");
+                capabilities.setCapability(OperaOptions.CAPABILITY, operaOptions);
+                break;
         }
 
-        if (Project.isWebMobile()) { // for chrome only
+        if (Project.isWebMobile() && Configuration.browser.equals("chrome")) { // for chrome only
             Map<String, Object> mobileDevice = new HashMap<>();
             mobileDevice.put("deviceName", Project.config.browserMobileView());
             chromeOptions.setExperimentalOption("mobileEmulation", mobileDevice);
@@ -54,6 +58,7 @@ public class DriverSettings {
             capabilities.setCapability("enableVideo", true);
             Configuration.remote = Project.config.remoteDriverUrl();
         }
+
         Configuration.browserCapabilities = capabilities;
 
     }
