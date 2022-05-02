@@ -23,6 +23,10 @@ public class GeneratedTests extends TestBase {
             open("https://catalog.cft.ru/");
         });
 
+        step("Accept cookies", () -> {
+            $x("//span[text()='OK']").click();
+        });
+
         step("Input in the search box the name of the application 1B280190", () -> {
             $("input[aria-label='search']").setValue("SWIFT-сообщения свободного формата МТ799, МТ999").pressEnter();
         });
@@ -37,6 +41,10 @@ public class GeneratedTests extends TestBase {
     void searchTestCodeApplication() {
         step("Open catalog.cft.ru", () -> {
             open("https://catalog.cft.ru/");
+        });
+
+        step("Accept cookies", () -> {
+            $x("//span[text()='OK']").click();
         });
 
         step("Input in the search box the code of the application 1B280190", () -> {
@@ -57,6 +65,10 @@ public class GeneratedTests extends TestBase {
 
         step("Open catalog.cft.ru", () -> {
             open("https://catalog.cft.ru/");
+        });
+
+        step("Accept cookies", () -> {
+            $x("//span[text()='OK']").click();
         });
 
         if (Project.config.browser().equals("firefox")) {
@@ -119,6 +131,10 @@ public class GeneratedTests extends TestBase {
             open("https://catalog.cft.ru/");
         });
 
+        step("Accept cookies", () -> {
+            $x("//span[text()='OK']").click();
+        });
+
         step("Input a query into the search bar IDE", () -> {
             $("input[aria-label='search']").setValue("IDE").pressEnter();
         });
@@ -135,6 +151,10 @@ public class GeneratedTests extends TestBase {
             open("https://catalog.cft.ru/");
         });
 
+        step("Accept cookies", () -> {
+            $x("//span[text()='OK']").click();
+        });
+
         step("Page title should have text 'Каталоги Решений и Продуктов'", () -> {
             String expectedTitle = "Каталоги Решений и Продуктов";
             String actualTitle = title();
@@ -149,6 +169,10 @@ public class GeneratedTests extends TestBase {
     void consoleShouldNotHaveErrorsTest() {
         step("Open catalog.cft.ru", () -> {
             open("https://catalog.cft.ru/");
+        });
+
+        step("Accept cookies", () -> {
+            $x("//span[text()='OK']").click();
         });
 
         step("Console logs should not contain text 'SEVERE'", () -> {
